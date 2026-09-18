@@ -46,7 +46,7 @@ Crie a pasta do projeto e mova o script de monitoramento para lá:
 Bash
 
 sudo mkdir -p /opt/sambashield
-# Mova o seu arquivo sambashield.py para essa pasta
+# Mova o seu arquivo samba_monitor.py para essa pasta
 sudo chmod +x /opt/sambashield/sambashield.py
 
 2. Configuração do Serviço Systemd
