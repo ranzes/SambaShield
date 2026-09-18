@@ -46,8 +46,8 @@ Crie a pasta do projeto e mova o script de monitoramento para lá:
 Bash
 
 sudo mkdir -p /opt/sambashield
-# Mova o seu arquivo samba_monitor.py para essa pasta
-sudo chmod +x /opt/sambashield/samba_monitor.py
+# Mova o seu arquivo sambashield.py para essa pasta
+sudo chmod +x /opt/sambashield/sambashield.py
 
 2. Configuração do Serviço Systemd
 
@@ -59,7 +59,7 @@ Description=SambaShield - Ransomware Defender Daemon
 After=smbd.service
 
 [Service]
-ExecStart=/usr/bin/python3 /opt/sambashield/samba_monitor.py
+ExecStart=/usr/bin/python3 /opt/sambashield/sambashield.py
 Restart=always
 User=root
 
