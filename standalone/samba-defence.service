@@ -1,0 +1,16 @@
+Ini, TOML
+
+[Unit]
+Description=Samba Anti-Ransomware Daemon
+After=smbd.service
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/sambashield/samba_monitor.py
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
+

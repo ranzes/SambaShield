@@ -1,0 +1,15 @@
+<group name="samba,">
+  <!-- Regra Base: Detecta modificação/criação de arquivo -->
+  <rule id="100010" level="3">
+    <decoded_as>samba_audit</decoded_as>
+    <match>write|rename|unlink</match>
+    <description>Samba: Arquivo modificado por $(srcuser)</description>
+  </rule>
+
+  <!-- Regra de Frequência: 10 vezes em 5 segundos -->
+  <rule id="100011" level="12" frequency="10" timeframe="5">
+    <if_matched_sid>100010</if_matched_sid>
+    <same_srcuser />
+    <description>Samba: Possível Ransomware - Múltiplos acessos rápidos de $(srcuser)</description>
+  </rule>
+</group>
