@@ -36,7 +36,7 @@ Para que o SambaShield capture as atividades nos dois cenários (Standalone ou W
     full_audit:prefix = smbd_audit: %u|%I|%m|%S
 
     # Define quais operações serão monitoradas. Foco em gravação e alteração
-    full_audit:success = write pwrite rename unlink
+    full_audit:success = renameat unlinkat fchmod fchown write rmdir renameat pwrite open
     full_audit:failure = none
 
     # Envia os registros para o daemon de logs do Linux
